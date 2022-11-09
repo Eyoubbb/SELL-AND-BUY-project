@@ -1,0 +1,160 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+body {
+	display: flex;
+	flex-direction: column;
+
+	main {
+		--gap: 3em;
+		flex-grow: 1;
+		display: flex;
+		justify-content: center;
+
+		@include for-size(m) {
+			align-items: center;
+		}
+	}
+}
+
+
+.wrapper-presentation {
+	flex: 1 1 50%;
+	padding: var(--gap) 2em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--gap);
+	background-color: var(--primary-1);
+
+	@include for-size(m) {
+		display: none;
+	}
+
+	.description {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+
+		img {
+			@include size(100px);
+		}
+	}
+
+	.container-image {
+		img {
+			@include size;
+		}
+	}
+}
+
+.wrapper-form {
+	flex: 1 0 50%;
+	max-width: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--gap);
+	padding: var(--gap) 4em;
+
+	@include for-size(m) {
+		flex: 0 1 90%;
+		gap: var(--gap);
+		background-color: var(--primary-1);
+		border-radius: 1em;
+		@include box-shadow($blur: 45px);
+		isolation: isolate;
+	}
+	
+	@include for-size(s) {
+		font-size: .8em;
+	}
+	
+	.title {
+		width: 100%;
+		
+		h1 {
+			margin: .3em 0;
+			font-size: 2.5em;
+		}
+
+		span {
+			color: var(--secondary-1);
+			font-size: .9em;
+			
+			a {
+				color: var(--hyperlink);
+			}
+		}
+	}
+
+	form {
+		--radius: 5px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap);
+
+		:is(&.form-invalid input, & input:not(:placeholder-shown)):is(:invalid, .invalid) {
+			color: var(--error);
+			border-color: var(--error);
+			outline-color: var(--error);
+
+			&::placeholder {
+				color: var(--error);
+			}
+		}
+
+		.field {
+			display: flex;
+			flex-direction: column;
+			gap: calc(var(--gap) / 3);
+
+			label {
+				width: fit-content;
+				font-size: 1.5em;
+				font-weight: bold;
+			}
+
+			input {
+				padding: .75em;
+				width: 100%;
+				border: 1px solid black;
+				border-radius: var(--radius);
+				@include box-shadow($down: 5px);
+
+				&::placeholder {
+					font-size: .8em;
+				}
+			}
+
+			.error {
+				color: var(--error);
+				font-size: .9em;
+			}
+		}
+
+		.commands {
+			margin-top: calc(var(--gap) / 2);
+			display: flex;
+			gap: 20px;
+			border-radius: var(--radius);
+			
+			button {
+				width: 100%;
+				padding: .75em;
+				color: var(--primary-1);
+				font-size: 1.25em;
+				font-weight: bold;
+				background-color: var(--secondary-1);
+				border-radius: var(--radius);
+				@include box-shadow;
+				transition: scale .3s ease;
+
+				&:active {
+					scale: .95;
+				}
+			}
+		}
+	}
+}

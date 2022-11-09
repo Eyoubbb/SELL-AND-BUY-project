@@ -1,0 +1,100 @@
+@use "../abstracts" as *;
+@use "login";
+
+.hidden {
+	display: none;
+}
+
+.progress-bar {
+	--bg-color: var(--primary-2);
+	counter-reset: step;
+	display: flex;
+	font-size: .65em;
+
+	li {
+		position: relative;
+		width: calc(100% / 3);
+		color: black;
+		font-size: .9em;
+		text-transform: uppercase;
+		text-align: center;
+
+		@include pseudo(before, counter(step), static) {
+			--size: 2.2em;
+			counter-increment: step;
+			margin: 0 auto 5px;
+			width: var(--size);
+			display: block;
+			color: var(--primary-1);
+			font-size: calc(var(--size) / 2);
+			font-weight: bold;
+			line-height: var(--size);
+			background-color: var(--accent-1);
+			border-radius: 3px;
+			transition: color .3s .2s ease, background-color .3s .2s ease;
+		}
+
+		&.active ~ ::before {
+			color: unset;
+			font-weight: normal;
+			background-color: var(--bg-color);
+			transition: color .3s ease, background-color .3s ease;
+		}
+
+		@include pseudo($pos: 9px auto auto -50%, $sel: ':not(:first-child)') {
+			z-index: -1;
+			@include size(100%, 2px);
+			translate: 0 50%;
+			background: linear-gradient(90deg, var(--accent-1) 50%, var(--bg-color) 50%);
+			background-size: 200%;
+			transition: background-position-x .3s ease;
+		}
+
+		&.active ~ ::after {
+			background-position-x: 100%;
+			transition: background-position-x .3s .2s ease;
+		}
+	}
+}
+
+fieldset {
+	display: none;
+	flex-direction: column;
+	gap: calc(var(--gap) * .5);
+	animation: fade 1s ease;
+
+	&.active {
+		display: flex;
+	}
+
+	.field:has(button) {
+		flex-direction: row;
+		gap: 10px;
+	}
+
+	.container-image {
+		display: grid;
+		place-items: center;
+		
+		&:has(.image-preview[src=""]) {
+			display: none;
+		}
+
+		.image-preview {
+			width: 12em;
+			aspect-ratio: 1/1;
+			border-radius: 50%;
+			@include box-shadow;
+			animation: fade .5s ease;
+		}
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
