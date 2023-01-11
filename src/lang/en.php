@@ -111,7 +111,6 @@ const NAV_NEW_PRODUCT = "New product";
 
 const CUSTOMER_SERVICE = "Client service";
 const SHIPPING_RETURN = "Shipping and return";
-const FIND_OUT = "Find out more";
 const NEWSLETTER = "Signup to our newsletter";
 const LEGAL_MENTION = "Legal notices";
 const CONDITION_VENTE = "Terms and condition ";
