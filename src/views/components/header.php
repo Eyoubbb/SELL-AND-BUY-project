@@ -10,6 +10,7 @@
 	$askCreatorUrl = $data['routes']['GET:Creator#ask']->getUrl();
 	$carturl = $data['routes']['GET:Cart#cart']->getUrl();
 	$newProductUrl = $data['routes']['GET:Product#new']->getUrl();
+	$supportUrl = $data['routes']['GET:Admin#support']->getUrl();
 
 	if (isLoggedIn()) {
 		$user = unserialize($_SESSION['user']);
@@ -101,12 +102,10 @@
 				<?php
 					if ($user) {
 						$settingsText = NAV_ACCOUNT_SETTINGS;
-						$askCreatorText = BECOME_CREATOR;
-						$cartText = NAV_CART;
-
+						$url = isLoggedIn() && isCreator() ? $data['routes']['GET:Creator#index']->getUrl(['id' => $user->getId()]) : $logoutUrl;
 						echo <<<HTML
 							<li class="profile">
-								<a href="$logoutUrl">
+								<a href="$url">
 									<span class="name">{$user->getFirstName()} {$user->getLastName()}</span>
 									<span class="email">{$user->getEmail()}</span>
 								</a>
@@ -122,10 +121,16 @@
 						if ($user instanceof Creator) {
 							$text = NAV_NEW_PRODUCT;
 							$url = $newProductUrl;
+						} else if ($user instanceof Admin) {
+							$text = NAV_SUPPORT;
+							$url = $supportUrl;
 						} else {
 							$text = BECOME_CREATOR;
 							$url = $askCreatorUrl;
 						}
+
+						$askCreatorText = BECOME_CREATOR;
+						$cartText = NAV_CART;
 
 						echo <<<HTML
 							<li>

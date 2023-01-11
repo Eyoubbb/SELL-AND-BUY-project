@@ -102,10 +102,11 @@ const NAV_REGISTER = "S'inscrire";
 const NAV_CREATOR = "Createurs";
 const NAV_SHOP = "Acheter";
 const NAV_COLLECTIONS = "Collections";
-const NAV_CART = "Mon Panier";
+const NAV_CART = "Panier";
 const NAV_ACCOUNT = "Mon compte";
 const NAV_ACCOUNT_SETTINGS = "Paramètres";
 const NAV_NEW_PRODUCT = "Nouveau produit";
+const NAV_SUPPORT = "Dashboard";
 
 /*************** Footer ***************/
 
