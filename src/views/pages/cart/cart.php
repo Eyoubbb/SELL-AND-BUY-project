@@ -20,12 +20,12 @@
                 echo <<<HTML
                 <table>
                     <tr>
-                        <td></th>
-                        <td></th>
-                        <td>$labelProduct</th>
-                        <td>$labelQuantity</th>
-                        <td>$labelPrice</th>
-                        <td>$labelTotal</th>
+                        <th></th>
+                        <th></th>
+                        <th>$labelProduct</th>
+                        <th>$labelQuantity</th>
+                        <th>$labelPrice</th>
+                        <th>$labelTotal</th>
                     </tr>
                 HTML;
 
@@ -34,8 +34,6 @@
                     $creator = $data['creators'][$product->getCreatorId()];
 
                     require PATH_COMPONENTS . 'cart.php';
-
-
                 }
 
                 echo <<<HTML
