@@ -36,4 +36,20 @@ class SettingsController extends Controller {
 		$this->view('settings/security', $data);
 
 	}
+
+	public function help(): void {
+
+		if(!isLoggedIn()) {
+			redirect($this->getRoutes()['GET:User#login']);
+		}
+
+		$data['title'] = SETTINGS_HELP_TITLE;
+		$data['stylesheets'][] = 'pages/settings/help';
+
+		$ticketTypeModel = $this->model('TicketType');
+
+		$data['ticketTypes'] = $ticketTypeModel->allTypes();
+
+		$this->view('settings/help', $data);
+	}
 }

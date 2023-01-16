@@ -19,7 +19,7 @@
 
 		gap : calc(2 * $gap);
 
-		.settings-type {
+		.settings-type, .help-type {
 			display: flex;
 			align-items: center;
 	
@@ -52,6 +52,8 @@
 				}
 			}
 		}
+
+		
 
 		@include media(l) {
 			justify-content: center;

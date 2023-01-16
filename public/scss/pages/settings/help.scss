@@ -1,0 +1,111 @@
+@use "../../abstracts" as *;
+@use "../../base" as *;
+
+@use "../../components/header";
+@use "../../components/footer";
+@use "../../components/nav-header";
+
+section.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    
+    section.help {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary-2);
+        border-radius: 10px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        margin: 6vh;
+
+        @include media(m) {
+            width: 85vw;
+        }
+
+        div.main-title {
+            margin: 30px;
+            max-width: 450px;
+
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 6px;
+            }
+
+            p {
+                font-size: 1.05em;
+                margin-bottom: 5px;
+            }
+        }
+
+        div.main-body {
+            display: flex;
+            flex-direction: column;
+            
+            div.wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                margin: 20px 30px;
+
+                @include media(m) {
+                    width: 80vw;
+                }
+                
+                h1 {
+                    font-size: 1.3em;
+                    margin: 0px 0px 10px 0px;
+                }
+
+                select {
+                    padding: 5px;
+                    width: 100%;
+                }
+
+                input {
+                    padding: 5px;
+                    width: 100%;
+                }
+
+                textarea {
+                    padding: 5px;
+                    resize: vertical;
+                    min-height: 110px;
+
+                    @include media(m) {
+                        width: 100%;
+                    }
+                }
+
+                select, input, textarea {
+                    border-radius: 5px;
+                    background-color: var(--primary-1);
+                }
+            }
+        }
+
+        button {
+            padding: .75em 1.5em;
+            color: var(--primary-1);
+            font-size: 1.1em;
+            font-weight: bold;
+            background-color: var(--secondary-1);
+            border-radius: var(--radius);
+            @include box-shadow;
+            transition: scale .3s ease;
+            border-radius: 5px;
+            margin-bottom: 20px;
+
+            &:active {
+                scale: .95;
+            }
+        }
+        
+    }
+
+}
+

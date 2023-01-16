@@ -139,4 +139,18 @@ class TicketModel extends Model {
 
 		return true;
 	}
+
+	public function new() {
+		$ticketDAO = $this->dao('Ticket');
+
+		$ticket = new Ticket();
+		$ticket->setUserId($_SESSION['user_id']);
+
+		if (!$ticketDAO->createTicket($ticket)) {
+			$this->setError('ERROR_CREATING_TICKET');
+			return false;
+		}
+
+		return true;
+	}
 }

@@ -305,10 +305,20 @@ const SETTINGS_MODIFY = "Modifier";
 const SETTINGS_PASSWORD = "Mot de passe";
 const SETTINGS_DUMMY_PASSWORD = "********";
 const SETTINGS_SAVE = "Sauvegarder";
-
 const SETTINGS_SECURITY_GUIDE = "Modifier l'adresse e-mail, le nom et le numéro de téléphone mobile";
 const SETTINGS_SECURITY_MAIN_TITLE = "Réglages principaux";
 const SETTINGS_SECURITY_MAIN_SUBTITLE = "Ces informations apparaîtront sur votre profil.";
+const SETTINGS_HELP_TITLE = "Aide et questions";
+const SETTINGS_HELP_GUIDE = "Contactez nous pour toute question ou préoccupation";
+const SETTINGS_HELP_FORM_TITLE = "Formulaire de contact";
+const SETTINGS_HELP_FORM_SUBTITLE = "Nous vous répondrons dans les plus brefs délais";
+const SETTINGS_HELP_FORM_SUBTITLE_SECOND = "Vos nom et prénom seront automatiquement utilisé pour répondre a votre message";
+const SETTINGS_HELP_SUBMIT = "Envoyer";
+const SETTINGS_HELP_CONTENT_PLACEHOLDER = "Votre message";
+const SETTINGS_HELP_TITLE_REQUEST_PLACEHOLDER = "Votre titre";
+const SETTINGS_HELP_CONTENT = "Votre message";
+const SETTINGS_HELP_TITLE_REQUEST = "Titre du message";
+const SETTINGS_HELP_SUBJECT = "Objet du message";
 
 /*************** Discover ***************/
 

@@ -1,6 +1,6 @@
 <?php
 
-class TicketType {
+class TicketTypes {
 
 	private int $ticket_type_id;
 	private string $ticket_type_name;
