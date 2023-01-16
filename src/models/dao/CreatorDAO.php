@@ -49,7 +49,7 @@ class CreatorDAO extends DAO {
         ]);
 	}
 
-	public function setVisibleCreator(int $creator_id, bool $visibility) {
+	public function setVisibleCreator(int $creator_id, int $visibility) {
 		$sql = "UPDATE {$this->getTable()} SET creator_visible = ?
 				WHERE creator_id = ?";
 		return $this->rowCount($sql, [$visibility, $creator_id]);
