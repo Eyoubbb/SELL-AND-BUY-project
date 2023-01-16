@@ -2,7 +2,7 @@
 
 require_once PATH_CORE . 'Model.php';
 require_once PATH_ENTITIES . 'Ticket.php';
-require_once PATH_ENTITIES . 'TicketType.php';
+require_once PATH_ENTITIES . 'TicketTypes.php';
 require_once PATH_ENTITIES . 'User.php';
 require_once PATH_ENTITIES . 'Creator.php';
 
@@ -31,7 +31,7 @@ class TicketModel extends Model {
 			}
 
 			if (!isset($ticketTypes[$row['ticket_type_id']])) {
-				$ticketTypes[$row['ticket_type_id']] = new TicketType($row);
+				$ticketTypes[$row['ticket_type_id']] = new TicketTypes($row);
 			}
 			
 			$rowAdmin = [
@@ -141,12 +141,40 @@ class TicketModel extends Model {
 	}
 
 	public function new() {
+		[
+			'subject' => $subject,
+			'name-request' => $nameRequest,
+			'content-request' => $contentRequest,
+		] = $_POST;
+
+		$user = unserialize($_SESSION['user']);
+
+		$adminDAO = $this->dao('Admin');
+		
+		$res = $adminDAO->getAllAdmins();
+
+		if ($res === false) {
+			$this->setError('ERROR_FETCHING_ADMINS');
+			return false;
+		}
+
+		$randomAdmin = rand(0, count($res) - 1);
+		$dt = time();
+
 		$ticketDAO = $this->dao('Ticket');
 
 		$ticket = new Ticket();
-		$ticket->setUserId($_SESSION['user_id']);
+		$ticket->setUserId($user->getId());
+		$ticket->setName($nameRequest);
+		$ticket->setDescription($contentRequest);
+		$ticket->setTicketTypeId($subject);
+		$ticket->setAdminId($res[$randomAdmin]['admin_id']);
+		$ticket->setDate(date('Y-m-d', $dt));
+		$ticket->setResolved(0);
 
-		if (!$ticketDAO->createTicket($ticket)) {
+		$resTicket = $ticketDAO->createTicket($ticket);
+
+		if ($resTicket === false) {
 			$this->setError('ERROR_CREATING_TICKET');
 			return false;
 		}

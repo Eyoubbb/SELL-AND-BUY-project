@@ -50,6 +50,18 @@ class SettingsController extends Controller {
 
 		$data['ticketTypes'] = $ticketTypeModel->allTypes();
 
+		if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['content-request']) && !empty($_POST['name-request'])) {
+			$ticketModel = $this->model('Ticket');
+			
+			$res = $ticketModel->new();
+
+			if(!$res) {
+				$data['error'] = $ticketModel->getError();
+			}
+
+			redirect($this->getRoutes()['GET:Settings#index']);
+		}
+
 		$this->view('settings/help', $data);
 	}
 }
