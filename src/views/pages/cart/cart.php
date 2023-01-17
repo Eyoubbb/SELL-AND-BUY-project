@@ -1,4 +1,4 @@
-<?=
+<?php
     $homeUrl = $data['routes']['GET:Home#index']->getUrl();
 	$deleteCart = $data['routes']['GET:Cart#deleteCart']->getUrl(['id' => unserialize($_SESSION['user'])->getId()]);
 ?>
@@ -20,22 +20,20 @@
                 echo <<<HTML
                 <table>
                     <tr>
-                        <td></th>
-                        <td></th>
-                        <td>$labelProduct</th>
-                        <td>$labelQuantity</th>
-                        <td>$labelPrice</th>
-                        <td>$labelTotal</th>
+                        <th></th>
+                        <th></th>
+                        <th>$labelProduct</th>
+                        <th>$labelQuantity</th>
+                        <th>$labelPrice</th>
+                        <th>$labelTotal</th>
                     </tr>
                 HTML;
 
                 foreach ($data['products'] as $product) {
-                    
+
                     $creator = $data['creators'][$product->getCreatorId()];
 
                     require PATH_COMPONENTS . 'cart.php';
-
-
                 }
 
                 echo <<<HTML
@@ -49,7 +47,7 @@
             <div class="cart-total">
                 <p><?= CART_TOTAL . " : " . $data['count']['quantity'] ?></p>
                 <p><?= CART_PRICE . " : " . $data['total']['cart_price']?> €</p>
-                <p><?= CART_PRICE_DISCOUNT . " : " . $data['total']['cart_price_discount']?> €</p>   
+                <p><?= CART_PRICE_DISCOUNT . " : " . $data['total']['cart_price_discount']?> €</p>
             </div>
             <div class="cart-buttons">
                 <button>

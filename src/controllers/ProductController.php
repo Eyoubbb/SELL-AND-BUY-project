@@ -30,11 +30,11 @@ class ProductController extends Controller {
 	public function new(): void {
 
 		if (!isLoggedIn()) {
-			redirect($this->getRoutes()['GET:User#login']->getUrl());
+			redirect($this->getRoutes()['GET:User#login']);
 		}
 
 		if (!isCreator()) {
-			redirect($this->getRoutes()['GET:Home#index']->getUrl());
+			redirect($this->getRoutes()['GET:Home#index']);
 		}
 
 		if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name']) && !empty($_POST['category_id']) && !empty($_POST['price']) && !empty($_POST['description_fr']) && !empty($_POST['description_en']) && isset($_FILES['image'])) {

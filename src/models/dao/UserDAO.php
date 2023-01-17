@@ -52,4 +52,20 @@ class UserDAO extends DAO {
 		return $this->update(['user_id' => $user->getId()], ['user_picture_url' => $user->getPictureUrl()]);
 	}
 
+	public function updateFirstName(User $user): bool {
+		return $this->update(['user_id' => $user->getId()], ['user_first_name' => $user->getFirstName()]);
+	}
+
+	public function updateLastName(User $user): bool {
+		return $this->update(['user_id' => $user->getId()], ['user_last_name' => $user->getLastName()]);
+	}
+
+	public function updateEmail(User $user): bool {
+		return $this->update(['user_id' => $user->getId()], ['user_email' => $user->getEmail()]);
+	}
+
+	public function updatePasswordHash(User $user): bool {
+		return $this->update(['user_id' => $user->getId()], ['user_password_hash' => $user->getPasswordHash()]);
+	}
+
 }

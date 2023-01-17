@@ -1,0 +1,79 @@
+@use "../../abstracts" as *;
+@use "../../base" as *;
+
+@use "../../components/header";
+@use "../../components/footer";
+@use "../../components/nav-header";
+
+
+.security {
+	$gap: 1em;
+	display: flex;
+	flex-direction: column;
+	padding: calc(2 * $gap);
+
+	.container {
+		border-bottom: 1px solid var(--primary-2);
+		padding-bottom: calc(3 * $gap);
+
+		display: flex;
+		gap: calc(4 * $gap);
+
+		@include media(m) {
+			flex-direction: column;
+			gap: $gap;
+		} 
+	}
+	
+	.main-container {
+		.main-title {
+			h1 {
+				font-size: 22px;
+				padding-bottom: .2em;
+				font-weight: bold;
+			}
+			p {
+				font-size: 16px;
+			}
+
+		}
+		.main-body {
+			display: flex;
+			flex-direction: column;
+			gap: $gap;
+			
+			.wrapper {
+				display: flex;
+				flex-direction: column;
+				gap: .5em; 
+	
+				.text-box {
+					border: 1px solid black;
+					border-radius: 3px;
+					padding: .3em;
+
+					min-width: 28em;
+
+					@include media(m) {
+						min-width: 0em;
+					}
+				}
+			}
+		}
+	}
+
+	input.save {
+		align-self: flex-start;
+		border-radius: 5px;
+		text-align: center;
+		padding: .5em $gap;
+		margin-top: $gap;
+
+		cursor: pointer;
+
+
+		&:hover {
+			background-color: var(--primary-2);
+		}
+	}
+}

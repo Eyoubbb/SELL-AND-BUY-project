@@ -1,0 +1,23 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.popup {
+	position: fixed;
+	z-index: 9999;
+	top: 50%;
+	left: 50%;
+	max-width: 80vw;
+	width: 700px;
+
+	border-radius: 0.4em;
+	transform: translate(-50%, -50%);
+	background-color: var(--primary-1);
+	outline: 9999px solid rgba(0,0,0,0.5);
+
+	&.hide {
+		display: none;
+	}
+}
+
+
+

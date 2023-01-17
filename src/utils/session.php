@@ -5,7 +5,11 @@ function isLoggedIn(): bool {
 }
 
 function isCreator(): bool {
-	return isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof Creator;
+	return isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof Creator && unserialize($_SESSION['user'])->getVisible() == 1;
+}
+
+function isUnverifiedCreator(): bool {
+	return isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof Creator && unserialize($_SESSION['user'])->getVisible() == 0;
 }
 
 function isAdmin(): bool {

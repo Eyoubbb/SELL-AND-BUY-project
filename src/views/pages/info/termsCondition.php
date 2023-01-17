@@ -3,7 +3,7 @@
 ?>
 
 <section class="terms-conditions-and-notice">
-    <div class="nav-container">
+    <div class="nav-container fixElementUp">
         <div class="nav">
             <div class="step" title="click me">
                 <p title="click me"><?= TERMS_CONDITIONS_TITLE_SECTION_ONE ?></p>

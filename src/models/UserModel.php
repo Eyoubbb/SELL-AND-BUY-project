@@ -108,4 +108,48 @@ class UserModel extends Model {
 		$_SESSION['logged_in'] = false;
 	}
 
+	public function updateSecurity(): array | false {
+		[
+			'first-name' => $firstName,
+			'last-name' => $lastName,
+			'email' => $email,
+			'password' => $password,
+		] = $_POST;
+		
+		$user = unserialize($_SESSION['user']);
+
+		$userDAO = $this->dao('User');
+
+		$userExist = $userDAO->findByEmail($email);
+
+		if($userExist !== false) {
+			$this->setError('EMAIL_ALREADY_EXISTS');
+			return false;
+		}
+
+		if($firstName) {
+			$user->setFirstName($firstName);
+			$userDAO->updateFirstName($user);
+		}
+
+		if($lastName) {
+			$user->setLastName($lastName);
+			$userDAO->updateLastName($user);
+		}
+
+		if($email) {
+			$user->setEmail($email);
+			$userDAO->updateEmail($user);
+		}
+
+		if($password) {
+			$user->setPasswordHash(password_hash($password, PASSWORD_DEFAULT));
+			$userDAO->updatePasswordHash($user);
+		}
+
+		$_SESSION['user'] = serialize($user);
+		
+		return ['user' => $user];
+	}
+
 }

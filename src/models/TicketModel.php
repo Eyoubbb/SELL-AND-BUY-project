@@ -2,8 +2,9 @@
 
 require_once PATH_CORE . 'Model.php';
 require_once PATH_ENTITIES . 'Ticket.php';
-require_once PATH_ENTITIES . 'TicketType.php';
+require_once PATH_ENTITIES . 'TicketTypes.php';
 require_once PATH_ENTITIES . 'User.php';
+require_once PATH_ENTITIES . 'Creator.php';
 
 class TicketModel extends Model {
 	public function tickets(): array | false {
@@ -30,7 +31,7 @@ class TicketModel extends Model {
 			}
 
 			if (!isset($ticketTypes[$row['ticket_type_id']])) {
-				$ticketTypes[$row['ticket_type_id']] = new TicketType($row);
+				$ticketTypes[$row['ticket_type_id']] = new TicketTypes($row);
 			}
 			
 			$rowAdmin = [
@@ -62,6 +63,20 @@ class TicketModel extends Model {
 			$this->setError('ERROR_RESOLVING_TICKET');
 			return false;
 		}
+
+		if ($ticket->getTicketTypeId() === 5) {
+
+			$creatorDAO = $this->dao('Creator');
+			$creator = new Creator($creatorDAO->findAllTypesCreatorById($ticket->getUserId()));
+
+			if ($creator->getVisible()) {
+				$this->setError('ERROR_UNEXPECTED_CREATOR_VISIBILITY');
+				return false;
+			}
+
+			$res = $creatorDAO->setVisibleCreator($creator->getId(), 1);
+		}
+
 		return true;
 	}
 
@@ -73,6 +88,20 @@ class TicketModel extends Model {
 			$this->setError('ERROR_REOPENING_TICKET');
 			return false;
 		}
+
+		if ($ticket->getTicketTypeId() === 5) {
+			
+			$creatorDAO = $this->dao('Creator');
+			$creator = new Creator($creatorDAO->findAllTypesCreatorById($ticket->getUserId()));
+
+			if ($creator->getVisible() === false) {
+				$this->setError('ERROR_UNEXPECTED_CREATOR_VISIBILITY');
+				return false;
+			}
+
+			$res = $creatorDAO->setVisibleCreator($creator->getId(), 0);
+		}
+
 		return true;
 	}
 
@@ -84,6 +113,72 @@ class TicketModel extends Model {
 			$this->setError('ERROR_DELETING_TICKET');
 			return false;
 		}
+
+		if ($ticket->getTicketTypeId() === 5) {
+			
+			$creatorDAO = $this->dao('Creator');
+			$creator = new Creator($creatorDAO->findAllTypesCreatorById($ticket->getUserId()));
+
+			if ($creator->getVisible() == 0) {
+
+				$fileName = $creator->getPictureUrl();
+
+				if (file_exists(PATH_UPLOAD_CREATOR_BANNERS . $fileName)) {
+					unlink(PATH_UPLOAD_CREATOR_BANNERS . $fileName);
+				}
+
+				$socialMediaAccountsDAO = $this->dao('SocialMediaAccounts');
+				$res = $socialMediaAccountsDAO->removeAllAccounts($creator->getId());
+
+				$resDelete = $creatorDAO->deleteCreator($creator->getId());
+
+
+			}
+			
+		}
+
+		return true;
+	}
+
+	public function new() {
+		[
+			'subject' => $subject,
+			'name-request' => $nameRequest,
+			'content-request' => $contentRequest,
+		] = $_POST;
+
+		$user = unserialize($_SESSION['user']);
+
+		$adminDAO = $this->dao('Admin');
+		
+		$res = $adminDAO->getAllAdmins();
+
+		if ($res === false) {
+			$this->setError('ERROR_FETCHING_ADMINS');
+			return false;
+		}
+
+		$randomAdmin = rand(0, count($res) - 1);
+		$dt = time();
+
+		$ticketDAO = $this->dao('Ticket');
+
+		$ticket = new Ticket();
+		$ticket->setUserId($user->getId());
+		$ticket->setName($nameRequest);
+		$ticket->setDescription($contentRequest);
+		$ticket->setTicketTypeId($subject);
+		$ticket->setAdminId($res[$randomAdmin]['admin_id']);
+		$ticket->setDate(date('Y-m-d', $dt));
+		$ticket->setResolved(0);
+
+		$resTicket = $ticketDAO->createTicket($ticket);
+
+		if ($resTicket === false) {
+			$this->setError('ERROR_CREATING_TICKET');
+			return false;
+		}
+
 		return true;
 	}
 }

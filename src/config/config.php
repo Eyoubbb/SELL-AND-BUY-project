@@ -33,6 +33,7 @@ const PATH_COMPONENTS = PATH_VIEWS . 'components/';
 const PATH_PAGES = PATH_VIEWS . 'pages/';
 
 const PATH_FORMS = PATH_COMPONENTS . 'forms/';
+const PATH_POPUPS = PATH_COMPONENTS . 'popups/';
 
 const LANGUAGES = ['fr', 'en'];
 const DEFAULT_LANGUAGE = 'fr';
@@ -49,3 +50,4 @@ define('DB_PWD', $_SERVER['DB_PWD']);
 const PATH_UPLOAD_IMAGES = PATH_PUBLIC . 'images/';
 const PATH_UPLOAD_PROFILE_PICTURES = PATH_UPLOAD_IMAGES . 'users/';
 const PATH_UPLOAD_PRODUCT_IMAGES = PATH_UPLOAD_IMAGES . 'products/';
+const PATH_UPLOAD_CREATOR_BANNERS = PATH_UPLOAD_IMAGES . 'creators/';

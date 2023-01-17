@@ -86,22 +86,17 @@ class CartModel extends Model {
         $productsCart = $cartDAO->findAllProductsCart($user_id);
 
         foreach ($productsCart as $row) {
-            if ($row['product_id'] === $product_id && $row['cart_quantity'] === 1) {
+            if ($row['product_id'] === $product_id) {
                 
-                $resCarts = $cartDAO->deleteProductFromCart($user_id, $product_id);
+                if ($row['cart_quantity'] === 1) {
+                    $resCarts = $cartDAO->deleteProductFromCart($user_id, $product_id);
+                } else {
+                    $rescart = $cartDAO->updateProductToCart($user_id, $product_id, $row['cart_quantity'] - 1);
+                }
                 
                 return true;
             }
         }
-
-        $rescart = $cartDAO->updateProductToCart($user_id, $product_id, $row['cart_quantity'] - 1);
-
-        if ($resCarts === false) {
-            $this->setError('ERROR_DECREASE_QUANTITY');
-            return false;
-        }
-
-        return true;
     }
 
     public function deleteProduct(int $user_id, int $product_id): bool {
