@@ -1,6 +1,6 @@
 <?php
 if (isset($data['error']) && $data['error'] === 'ERROR_FETCHING_PRODUCT') {
-	echo '<span>' . PRODUCTUCT_INVALID . '</span>';
+	echo '<div class= "error"><span>' . PRODUCTUCT_INVALID . '</span> </div>';
 }else{
 	$product = $data['product'];
 	$creator = $data['creator'];

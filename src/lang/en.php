@@ -287,7 +287,7 @@ const TEXT_TERMS_NOTICE ="Before any questions please read our general condition
 const TEXT_SHIPPING_RETURN = "If you have any questions about shipping and returns, please see our terms and conditions here";
 const TEXT_CONTACT= "For all other questions you can consult us via the contact page";
 
-
+/*************** Error ***************/
 
 const PRODUCTUCT_INVALID ="Produit inexistant";
-CONST PROFILE_INVALID = "Créateur inexistant";
+CONST CREATOR_INVALID = "Créateur inexistant";
