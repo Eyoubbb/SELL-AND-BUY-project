@@ -6,10 +6,5 @@
 			const more = btn.nextElementSibling;
 			more.classList.toggle("hide");
 		});
-
-		btn.addEventListener("blur", ()=> {
-			const more = btn.nextElementSibling;
-			more.classList.toggle("hide");
-		});
 	}
 })();

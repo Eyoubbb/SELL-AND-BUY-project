@@ -13,6 +13,12 @@ foreach($tickets as $ticket) {
 }
 ?>
 
+<?php 
+	$popup = "popup-ticket";
+	require_once(PATH_COMPONENTS . 'overlay.php');
+	require_once(PATH_POPUPS . 'popup.php');
+?>
+
 <section class="support">
 	<div class="info-wrapper">
 		<div class="info">
@@ -105,13 +111,15 @@ foreach($tickets as $ticket) {
 
 					if($resolved) {
 						echo <<<HTML
-												<a id="resolve" href="$reopenUrl">Reopen</a>
-												<a id="delete" href="$deleteUrl">Delete</a>
+										<a id="resolve" href="$reopenUrl">Reopen</a>
+										<a id="delete" href="$deleteUrl">Delete</a>
+										<a id="extra" href="$">More</a>
 						HTML;
 					} else {
 						echo <<<HTML
-												<a id="resolve" href="$resolveUrl">Resolve</a>
-												<a id="delete" href="$deleteUrl">Delete</a>
+										<a id="resolve" href="$resolveUrl">Resolve</a>
+										<a id="delete" href="$deleteUrl">Delete</a>
+										<a id="extra" href="">More</a>
 						HTML;
 					}
 					echo <<<HTML
@@ -125,5 +133,5 @@ foreach($tickets as $ticket) {
 			?>
 		</table>
 	</div>
-
 </section>
+

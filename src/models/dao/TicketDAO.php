@@ -66,7 +66,7 @@ class TicketDAO extends DAO {
 			'ticket_date' => $ticket->getdate(),
 			'ticket_description' => $ticket->getDescription(),
 			'ticket_name' => $ticket->getName(),
-			'ticket_resolved' => $ticket->getResolved()  ? 1 : 0
+			'ticket_resolved' => $ticket->getResolved() ? 1 : 0
 		]);
 	}
 }
