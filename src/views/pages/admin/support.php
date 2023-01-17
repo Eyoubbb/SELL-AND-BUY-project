@@ -7,10 +7,14 @@ $ticketTypes = $data['ticketTypes'];
 
 $pending = 0;
 $resolved = 0;
+$popup = "popup-ticket";
 
 foreach($tickets as $ticket) {
 	$ticket->getResolved() ? $resolved++ : $pending++;
 }
+
+// require_once(PATH_COMPONENTS . 'overlay.php');
+
 ?>
 
 <section class="support">
@@ -105,15 +109,19 @@ foreach($tickets as $ticket) {
 
 					if($resolved) {
 						echo <<<HTML
-												<a id="resolve" href="$reopenUrl">Reopen</a>
-												<a id="delete" href="$deleteUrl">Delete</a>
+										<a id="resolve" href="$reopenUrl">Reopen</a>
+										<a id="delete" href="$deleteUrl">Delete</a>
+										<a id="{$ticket->getId()}" class="extra" >More</a>
 						HTML;
 					} else {
 						echo <<<HTML
-												<a id="resolve" href="$resolveUrl">Resolve</a>
-												<a id="delete" href="$deleteUrl">Delete</a>
+										<a id="resolve" href="$resolveUrl">Resolve</a>
+										<a id="delete" href="$deleteUrl">Delete</a>
+										<a id="{$ticket->getId()}" class="extra" >More</a>
 						HTML;
 					}
+					require(PATH_POPUPS . 'popup.php');
+
 					echo <<<HTML
 									</div>
 								</div>
@@ -121,9 +129,11 @@ foreach($tickets as $ticket) {
 						</tr>
 					HTML;
 
+
+
 				}
 			?>
 		</table>
 	</div>
-
 </section>
+

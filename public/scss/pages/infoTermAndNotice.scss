@@ -16,6 +16,11 @@ section.terms-conditions-and-notice {
         position: fixed;
         left: 7%;
         top: 17vh;
+        transition: all 0.5s ease-in-out;
+        
+        &.fix {
+            top: 6vh;
+        }
 
         div.nav {
             display: flex;

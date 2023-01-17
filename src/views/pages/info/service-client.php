@@ -11,10 +11,8 @@
 
 ?>
 <section class="container">
-    <div class="title">
-        <a class="support-title">Client support</a>
-        <a href="<?= $homeUrl ?>">Accueil</a>
-    </div>
+    
+    <?php require(PATH_COMPONENTS . 'nav-header.php') ?>
 
     <div class="body-support">
         <div>

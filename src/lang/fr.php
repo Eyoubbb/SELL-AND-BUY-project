@@ -74,6 +74,7 @@ const ERROR_EXTRAS = "C'est tout ce que nous savons.";
 /*************** Admin ***************/
 
 const ADMIN_WINDOW_TITLE = "Admin";
+const ADMIN_BUTTON = "Ouvrir le support";
 
 /*************** Tickets ***************/
 
@@ -102,10 +103,12 @@ const NAV_REGISTER = "S'inscrire";
 const NAV_CREATOR = "Createurs";
 const NAV_SHOP = "Acheter";
 const NAV_COLLECTIONS = "Collections";
-const NAV_CART = "Mon Panier";
+const NAV_CART = "Panier";
 const NAV_ACCOUNT = "Mon compte";
 const NAV_ACCOUNT_SETTINGS = "Paramètres";
 const NAV_NEW_PRODUCT = "Nouveau produit";
+const NAV_SUPPORT = "Dashboard";
+const NAV_VERIFICATION_PENDING = "Vérification en cours";
 
 /*************** Footer ***************/
 
@@ -163,14 +166,15 @@ const CREATOR_PROGRESS_STEP_TWO = "Adresse et numéro";
 const CREATOR_PROGRESS_STEP_THREE = "Résaux sociaux";
 const CREATOR_PROGRESS_STEP_FOUR = "Bannière et description";
 const CREATOR_SOCIALS = "Entrez vos réseaux sociaux (facultatif)";
-const CREATOR_INSTAGRAM = "Instagram";
-const CREATOR_FACEBOOK = "Facebook";
-const CREATOR_TWITTER = "Twitter";
-const CREATOR_YOUTUBE = "Youtube";
-const CREATOR_LINKEDIN = "LinkedIn";
-const CREATOR_TIKTOK = "TikTok";
+const CREATOR_INSTAGRAM = "Instagram (pseudo)";
+const CREATOR_FACEBOOK = "Facebook (pseudo)";
+const CREATOR_TWITTER = "Twitter (pseudo)";
+const CREATOR_YOUTUBE = "Youtube (nom de la chaine)";
+const CREATOR_PINTEREST = "Pinterest (pseudo)";
+const CREATOR_WEBSITE = "Website (url complète)";
 const CREATOR_DESCRIPTION = "Ajouter une description pour votre profil";
 const CREATOR_BANNIERE = "Ajouter une bannière pour votre profil";
+const CREATOR_CHOOSE_A_FILE = "Taille min autorisée 1000x300 px, si vous n'entrez aucune bannière, une bannière par défaut sera utilisée";
 
 /*************** Form ***************/
 
@@ -214,7 +218,7 @@ const CART_CHECKOUT_ERREUR = "Vous ne pouvez pas passer votre commande pour l'in
 /*************** Infos ***************/
 
 const INFO_CONTACT_WINDOW_TITLE = "Contact";
-const INFO_WINDOW_TITLE = "Information";
+const INFO_SERVICE_CLIENT_WINDOW_TITLE = "Service Client";
 const INFO_LEGAL_NOTICE_WINDOW_TITLE = "Mentions légales";
 const INFO_TERMS_CONDITIONS_WINDOW_TITLE = "Conditions générales";
 const INFO_SHIPPING_RETURN_WINDOW_TITLE = "Livraison et retours";
@@ -226,13 +230,13 @@ const CONTACT_ALT_CONTACT = "Une image de deux personnes qui discutent";
 
 /*************** Legal Notice ***************/
 
-const LEGAL_NOTICE_SUBTITLE = "Conditions générales d'utilisation de Sell & Buy";
-const LEGAL_NOTICE_SECTION_ONE = "En accédant et en utilisant notre site, vous acceptez d'être lié par les présentes conditions générales d'utilisation et par toutes les lois et règlements en vigueur. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser notre site. ";
+const LEGAL_NOTICE_SUBTITLE = "Mentions légales du site Sell & Buy";
+const LEGAL_NOTICE_SECTION_ONE = "Le site Sell & Buy est porduit et développé par Mathis Guerin, Hazim Asri, Eyoub Benkacem, Hedi Bouazza et Albert Vaillon domicilié à Lyon.";
 const LEGAL_NOTICE_SECTION_TWO = "Nous nous réservons le droit de modifier les présentes conditions générales d'utilisation à tout moment. Votre utilisation continue de notre site après tout changement de ces conditions générales d'utilisation signifie que vous acceptez ces changements. ";
 const LEGAL_NOTICE_SECTION_THREE = "Nous pouvons modifier ou interrompre notre site, ou tout service ou tout contenu sur notre site, à tout moment sans préavis. Nous ne serons pas responsables envers vous ou toute autre partie de toute modification, suspension ou interruption de notre site ou de tout service ou contenu sur notre site. ";
 const LEGAL_NOTICE_SECTION_FOUR = "Nous ne garantissons pas que notre site sera disponible sans interruption, sans erreur ou sans faille. Nous ne garantissons pas que les résultats qui peuvent être obtenus de l'utilisation de notre site seront exacts ou fiables. Vous acceptez que de temps en temps, nous puissions supprimer le contenu de notre site sans préavis. ";
 const LEGAL_NOTICE_SECTION_FIVE = "Vous acceptez que nous ne serons pas responsables envers vous ou toute autre partie de toute perte, dommage, réclamation ou autre responsabilité, y compris les frais raisonnables d'avocats, résultant de ou en relation avec votre utilisation de notre site, y compris, mais sans s'y limiter, toute erreur, omission, défaut, virus, défaillance de transmission, pannes de système, échec de la ligne de communication, perte de données ou de toute autre panne technique ou de toute autre cause. ";
-const LEGAL_NOTICE_TITLE_SECTION_ONE = "1. Conditions générales d'utilisation";
+const LEGAL_NOTICE_TITLE_SECTION_ONE = "1. Raison Sociale";
 const LEGAL_NOTICE_TITLE_SECTION_TWO = "2. Modifications";
 const LEGAL_NOTICE_TITLE_SECTION_THREE = "3. Interruption";
 const LEGAL_NOTICE_TITLE_SECTION_FOUR = "4. Garantie";
@@ -286,11 +290,45 @@ const LINK_LEGAL_NOTICE ="Mentions légales";
 const LINK_SHIPPING_RETURN ="Livraison, envoi et retour";
 
 const TEXT_WELCOME = "Bienvenue sur notre page d'aide";
-const TEXT_TERMS_NOTICE ="Avant toutes questions veuillez consulter nos conditions générales ainsi que nos mentions légales";
+const TEXT_TERMS_NOTICE = "Avant toutes questions veuillez consulter nos conditions générales ainsi que nos mentions légales";
 const TEXT_SHIPPING_RETURN = "Si vous avez des questions au sujet de l'envoie et du retour de nos produits veuillez consulter nos conditions ici";
 const TEXT_CONTACT= "Pour toutes autres questions vous pouvez nos consulter via la page contact";
 
 /*************** Error ***************/
 
 const PRODUCTUCT_INVALID ="Produit inexistant";
-CONST CREATOR_INVALID = "Créateur inexistant";
+const CREATOR_INVALID = "Créateur inexistant";
+
+/*************** Settings ***************/
+
+const SETTINGS_TITLE = "Paramètres";
+const SETTINGS_SECURITY_TITLE = "Sécurité and confidentialité";
+const SETTINGS_FIRST_NAME = "Prénom";
+const SETTINGS_LAST_NAME = "Nom";
+const SETTINGS_EMAIL = "Email";
+const SETTINGS_MODIFY = "Modifier";
+const SETTINGS_PASSWORD = "Mot de passe";
+const SETTINGS_DUMMY_PASSWORD = "********";
+const SETTINGS_SAVE = "Sauvegarder";
+const SETTINGS_SECURITY_GUIDE = "Modifier l'adresse e-mail, le nom et le numéro de téléphone mobile";
+const SETTINGS_SECURITY_MAIN_TITLE = "Réglages principaux";
+const SETTINGS_SECURITY_MAIN_SUBTITLE = "Ces informations apparaîtront sur votre profil.";
+const SETTINGS_HELP_TITLE = "Aide et questions";
+const SETTINGS_HELP_GUIDE = "Contactez nous pour toute question ou préoccupation";
+const SETTINGS_HELP_FORM_TITLE = "Formulaire de contact";
+const SETTINGS_HELP_FORM_SUBTITLE = "Nous vous répondrons dans les plus brefs délais";
+const SETTINGS_HELP_FORM_SUBTITLE_SECOND = "Vos nom et prénom seront automatiquement utilisé pour répondre a votre message";
+const SETTINGS_HELP_SUBMIT = "Envoyer";
+const SETTINGS_HELP_CONTENT_PLACEHOLDER = "Votre message";
+const SETTINGS_HELP_TITLE_REQUEST_PLACEHOLDER = "Votre titre";
+const SETTINGS_HELP_CONTENT = "Votre message";
+const SETTINGS_HELP_TITLE_REQUEST = "Titre du message";
+const SETTINGS_HELP_SUBJECT = "Objet du message";
+
+/*************** Discover ***************/
+
+const DISCOVER_TITLE_CREATORS_OF_WEEK = "Créateurs de la semaine";
+const DISCOVER_TITLE_ALL_CREATORS = "Tous les créateurs";
+const CREATOR_NO_PRODUCT_CATEGORY = "Pas de produits en vente";
+const PRODUCTUCT_INVALID ="Produit inexistant";
+const PROFILE_INVALID = "Créateur inexistant";
