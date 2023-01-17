@@ -113,13 +113,13 @@ foreach($tickets as $ticket) {
 						echo <<<HTML
 										<a id="resolve" href="$reopenUrl">Reopen</a>
 										<a id="delete" href="$deleteUrl">Delete</a>
-										<a id="extra" href="$">More</a>
+										<a id="extra">More</a>
 						HTML;
 					} else {
 						echo <<<HTML
 										<a id="resolve" href="$resolveUrl">Resolve</a>
 										<a id="delete" href="$deleteUrl">Delete</a>
-										<a id="extra" href="">More</a>
+										<a id="extra">More</a>
 						HTML;
 					}
 					echo <<<HTML

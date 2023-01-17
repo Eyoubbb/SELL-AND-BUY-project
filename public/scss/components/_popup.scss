@@ -10,8 +10,13 @@
 	max-width: 80%;
 	width: 700px;
 	transform: translate(-50%, -50%);
-	background-color: var(--primary-2);
+	background-color: var(--primary-1);
 	border-radius: 0.4em;
-	padding: 1em;
+
+	&.hide {
+		display: none;
+	}
 }
+
+
 

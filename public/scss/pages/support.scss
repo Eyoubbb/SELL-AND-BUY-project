@@ -120,18 +120,29 @@ main {
 .popup {
 	display: flex;
 	flex-direction: column;
-	gap: $gap;
 	.popup-header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		border-bottom: 1px solid var(--primary-2);
+		padding: $gap;
+
+		background-color: var(--primary-1);
+		border-radius: .4em .4em 0 0 ;
+
+		img {
+			@include size(1em);
+		}
 	}
 
 	.popup-body {
 		display: flex;
 		flex-direction: column;
 		gap: $gap;
+		padding: $gap;
+		font-size: 15px;
+
+		text-align: justify;
 
 		.column {
 			display: flex;
@@ -143,6 +154,28 @@ main {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
+		}
+
+		.buttons {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			gap: $gap;
+			#resolve, #delete {
+				background-color: var(--primary-1);
+				font-weight: bold;
+				transition: background-color .3s ease;
+				padding: $gap;
+
+				&:hover {
+					cursor: pointer;
+					background-color: var(--primary-2);
+				}
+			}
+		}
+
+		.subtitle {
+			font-weight: bold;
 		}
 	}
 }

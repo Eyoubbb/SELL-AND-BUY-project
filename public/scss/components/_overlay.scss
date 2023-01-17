@@ -12,4 +12,8 @@
 
 	position: absolute;
 	background-color: hsl(0, 0%, 0%, .5);
+
+	&.hide {
+		display: none;
+	}
 }
