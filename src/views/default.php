@@ -39,7 +39,7 @@
 		if (isset($data['scripts'])) {
 			foreach ($data['scripts'] as $script) {
 
-				$path = $data['cdn'] ? $script['name'] : PATH_JS . $script['name'] . '.js';
+				$path = PATH_JS . $script['name'] . '.js';
 				$attr = $script['attr'] ?? '';
 
 				echo "<script src=\"$path\" $attr></script>";
