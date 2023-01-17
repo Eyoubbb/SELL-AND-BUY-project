@@ -329,5 +329,3 @@ const SETTINGS_HELP_SUBJECT = "Subject of the message";
 const DISCOVER_TITLE_CREATORS_OF_WEEK = "Creators of the week";
 const DISCOVER_TITLE_ALL_CREATORS = "All creators";
 const CREATOR_NO_PRODUCT_CATEGORY = "No product in sell";
-const PRODUCTUCT_INVALID ="Produit inexistant";
-const PROFILE_INVALID = "Créateur inexistant";
