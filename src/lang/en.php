@@ -303,10 +303,20 @@ const SETTINGS_MODIFY = "Modify";
 const SETTINGS_PASSWORD = "Password";
 const SETTINGS_DUMMY_PASSWORD = "********";
 const SETTINGS_SAVE = "Save";
-
 const SETTINGS_SECURITY_GUIDE = "Modify password, email, name or phone number";
 const SETTINGS_SECURITY_MAIN_TITLE = "Main Settings";
 const SETTINGS_SECURITY_MAIN_SUBTITLE = "This information will appear on your profile.";
+const SETTINGS_HELP_TITLE = "Help or questions";
+const SETTINGS_HELP_GUIDE = "Contact us for any questions or problems";
+const SETTINGS_HELP_FORM_TITLE = "Contact form";
+const SETTINGS_HELP_FORM_SUBTITLE = "We will answer you as soon as possible";
+const SETTINGS_HELP_FORM_SUBTITLE_SECOND = "Your first and last name will be automatically used to reply to your message";
+const SETTINGS_HELP_SUBMIT = "Send";
+const SETTINGS_HELP_CONTENT_PLACEHOLDER = "Your message";
+const SETTINGS_HELP_TITLE_REQUEST_PLACEHOLDER = "Your title";
+const SETTINGS_HELP_CONTENT = "Content of the message";
+const SETTINGS_HELP_TITLE_REQUEST = "Title of the message";
+const SETTINGS_HELP_SUBJECT = "Subject of the message";
 
 /*************** Discover ***************/
 
