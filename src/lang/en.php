@@ -262,8 +262,10 @@ const TERMS_CONDITIONS_TITLE_SECTION_EIGHT = "8. Contact Us";
 const TERMS_CONDITIONS_LINK_CONTACT_US = "Contact Us";
 
 /*************** Shipping and Return ***************/
+const DELIVERY_SHIPPING_TITLE= "Delivery and return conditions";
 
-const DELIVERY_TITTLE = "Delivery system details";
+
+const DELIVERY_TITLE = "Delivery system details";
 const DELIVERY_TEXT_P1 ="We work with a subcontracted carrier to ensure the delivery of our products as soon as possible. Delivery charges are calculated according to the weight and destination of your order.";
 const DELIVERY_TEXT_P2 ="Delivery is available to most countries. Additional shipping charges may apply for deliveries outside the European Union. Please contact us prior to placing your order if you require delivery outside the EU so that we can provide you with a quote for delivery charges.";
 const DELIVERY_TEXT_P3 ="The estimated delivery time is indicated during the checkout process. Please note that delivery times are estimated and are not guaranteed. Delays may be caused by events beyond our control, such as weather conditions or carrier strikes.";

@@ -263,9 +263,9 @@ const TERMS_CONDITIONS_LINK_CONTACT_US = "Contactez-nous";
 /*************** Retour et envoi ***************/
 
 
-const DELIVERY_SHIPPING_TITTLE= "Conditions de livraison et de retour";
+const DELIVERY_SHIPPING_TITLE= "Conditions de livraison et de retour";
 
-const DELIVERY_TITTLE = "Condition de livraison";
+const DELIVERY_TITLE = "Condition de livraison";
 const DELIVERY_TEXT_P1 ="Nous travaillons avec un transporteur sous-traitant (UPS) pour assurer la livraison de nos produits dans les meilleurs délais. Les frais de livraison sont calculés en fonction du poids et de la destination de votre commande.";
 const DELIVERY_TEXT_P2 ="La livraison est disponible dans la plupart des pays. Des frais de livraison supplémentaires peuvent s'appliquer pour les livraisons en dehors de l'Union Européenne. Veuillez nous contacter avant de passer votre commande si vous souhaitez une livraison en dehors de l'UE afin que nous puissions vous fournir un devis pour les frais de livraison.";
 const DELIVERY_TEXT_P3 ="Le délai de livraison estimé est indiqué lors de la finalisation de votre commande. Veuillez noter que les délais de livraison sont estimatifs et ne sont pas garantis. Des retards peuvent être causés par des événements indépendants de notre volonté, tels que des conditions météorologiques ou des grèves des transporteurs.";
@@ -273,7 +273,7 @@ const DELIVERY_TEXT_P4 ="Vous serez informé par e-mail une fois que votre comma
 const DELIVERY_TEXT_P5 ="Si vous avez des questions ou des préoccupations concernant notre politique de livraison, n'hésitez pas à contacter notre service clientèle pour plus d'informations.";
 
 
-const SHIPPING_TITTLE ="Conditions de retour";
+const SHIPPING_TITLE ="Conditions de retour";
 const SHIPPING_TEXT_P1 = "Nos produits peuvent être retournés dans un délai de 14 jours suivant la réception de votre commande. Pour être admissible à un retour, votre article doit être dans le même état que lorsque vous l'avez reçu et dans son emballage d'origine. Veuillez noter que les frais de livraison ne sont pas remboursables et que les frais de retour sont à votre charge.";
 const SHIPPING_TEXT_P2 = "Veuillez contacter notre service client avant de nous retourner un produit. Nous vous fournirons alors les instructions pour effectuer le retour en utilisant notre transporteur sous-traitant. Si le retour est accepté, nous vous rembourserons le prix du produit, moins les frais de livraison initiaux.";
 const SHIPPING_TEXT_P3 = "Veuillez noter que certains produits sont exclus de notre politique de retour, tels que les produits personnalisés ou sur commande spéciale. Ces exclusions seront clairement indiquées lors de votre achat.";
