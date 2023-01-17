@@ -18,6 +18,10 @@ class ProductController extends Controller {
 			$data['title'] = $res['product']->getName();
 		} else {
 			$data['error'] = $model->getError();
+			$data['stylesheets'][] = 'pages/error';
+
+			$this->view('error/errorNoProduct', $data);
+
 		}
 
 		$this->view('product/product', $data);

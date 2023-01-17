@@ -114,7 +114,6 @@ const NAV_VERIFICATION_PENDING = "Verification pending";
 
 const CUSTOMER_SERVICE = "Client service";
 const SHIPPING_RETURN = "Shipping and return";
-const FIND_OUT = "Find out more";
 const NEWSLETTER = "Signup to our newsletter";
 const LEGAL_MENTION = "Legal notices";
 const CONDITION_VENTE = "Terms and condition ";
@@ -267,8 +266,10 @@ const TERMS_CONDITIONS_TITLE_SECTION_EIGHT = "8. Contact Us";
 const TERMS_CONDITIONS_LINK_CONTACT_US = "Contact Us";
 
 /*************** Shipping and Return ***************/
+const DELIVERY_SHIPPING_TITLE= "Delivery and return conditions";
 
-const DELIVERY_TITTLE = "Delivery system details";
+
+const DELIVERY_TITLE = "Delivery system details";
 const DELIVERY_TEXT_P1 ="We work with a subcontracted carrier to ensure the delivery of our products as soon as possible. Delivery charges are calculated according to the weight and destination of your order.";
 const DELIVERY_TEXT_P2 ="Delivery is available to most countries. Additional shipping charges may apply for deliveries outside the European Union. Please contact us prior to placing your order if you require delivery outside the EU so that we can provide you with a quote for delivery charges.";
 const DELIVERY_TEXT_P3 ="The estimated delivery time is indicated during the checkout process. Please note that delivery times are estimated and are not guaranteed. Delays may be caused by events beyond our control, such as weather conditions or carrier strikes.";
@@ -291,6 +292,11 @@ const TEXT_WELCOME = "Welcome to our client service page";
 const TEXT_TERMS_NOTICE ="Before any questions please read our general conditions and our legal notice";
 const TEXT_SHIPPING_RETURN = "If you have any questions about shipping and returns, please see our terms and conditions here";
 const TEXT_CONTACT= "For all other questions you can consult us via the contact page";
+
+/*************** Error ***************/
+
+const PRODUCTUCT_INVALID ="Product doesn't exist";
+const CREATOR_INVALID = "Creator doesn't exist";
 
 /*************** Settings ***************/
 

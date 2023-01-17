@@ -47,6 +47,9 @@ $router->get('/info/contact', 'Info#contact');
 $router->get('/info/legalNotice', 'Info#legalNotice');
 $router->get('/info/termsCondition', 'Info#termsCondition');
 
+$router->get('/error/errorNoProduct','Error#errorNoProduct');
+$router->get('/error/errorNoCreator','Error#errorNoCreator');
+
 $router->get('/settings', 'Settings#index');
 $router->get('/settings/security', 'Settings#security');
 $router->post('/settings/security', 'Settings#security');

@@ -22,7 +22,6 @@
 			</li>
 			<li>
 				<span><a class="hover-link" href="<?= $shippingReturn ?>"><?= SHIPPING_RETURN ?></a></span>
-				<span><a class="hover-link" href=""><?= FIND_OUT ?></a></span>
 			</li>
 		</ul>
 	</div>

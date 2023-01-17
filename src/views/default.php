@@ -56,8 +56,8 @@
 		}
 
 		echo '<main>';
-
-		if (isset($data['error']) && $data['error'] != 'INVALID_EMAIL' && $data['error'] !='INVALID_PASSWORD' && $data['error'] !='ERROR_FETCHING_PRODUCT'&& $data['error'] !='ERROR_CREATOR_NOT_FOUND') {
+		
+		if (isset($data['error']) && $data['error'] != 'INVALID_EMAIL' && $data['error'] !='INVALID_PASSWORD' && $data['error'] !='ERROR_FETCHING_PRODUCT' && $data['error'] !='ERROR_CREATOR_NOT_FOUND') {
 			echo "<div class=\"error\">$data[error]</div>";
 		} else {
 			require_once PATH_PAGES . $data['view'] . '.php';

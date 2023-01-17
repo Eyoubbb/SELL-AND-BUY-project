@@ -18,6 +18,9 @@ class CreatorController extends Controller {
 			$data['title'] = $res['creator']->getFullName();
 		} else {
 			$data['error'] = $creatorModel->getError();
+			$data['stylesheets'][] = 'pages/error';
+
+			$this->view('error/errorNoCreator', $data);
 		}
 		
 		$this->view('creator/profile', $data);
