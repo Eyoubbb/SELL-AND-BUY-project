@@ -3,8 +3,6 @@
 	const closePopup = document.querySelectorAll(".close");
 	const extras = document.querySelectorAll(".extra");
 
-	console.log(extras);
-	console.log(closePopup);
 	for(const btn of btns) {
 		btn.addEventListener("click", ()=> {
 			const more = btn.nextElementSibling;
