@@ -6,11 +6,12 @@
 	$registerUrl = $data['routes']['GET:User#register']->getUrl();
 	$logoutUrl = $data['routes']['GET:User#logout']->getUrl();
 	$searchUrl = $data['routes']['GET:Home#index']->getUrl();
-	$settingsUrl = $data['routes']['GET:Home#index']->getUrl();
 	$askCreatorUrl = $data['routes']['GET:Creator#ask']->getUrl();
 	$carturl = $data['routes']['GET:Cart#cart']->getUrl();
 	$newProductUrl = $data['routes']['GET:Product#new']->getUrl();
-	$supportUrl = $data['routes']['GET:Admin#support']->getUrl();
+	$settingsUrl = $data['routes']['GET:Settings#index']->getUrl();
+	$discoverCreatorUrl = $data['routes']['GET:Creator#discover']->getUrl();
+	$adminSupportUrl = $data['routes']['GET:Admin#support']->getUrl();
 
 	if (isLoggedIn()) {
 		$user = unserialize($_SESSION['user']);
@@ -35,7 +36,7 @@
 				<a class="hover-link" href="<?= $homeUrl ?>"><?= NAV_COLLECTIONS ?></a>
 			</li>
 			<li>
-				<a class="hover-link" href="<?= $homeUrl ?>"><?= NAV_CREATOR ?></a>
+				<a class="hover-link" href="<?= $discoverCreatorUrl ?>"><?= NAV_CREATOR ?></a>
 			</li>
 		</ul>
 		<form class="search-form" method="GET" action="<?= $searchUrl ?>">
@@ -118,12 +119,15 @@
 							</li>
 						HTML;
 
-						if ($user instanceof Creator) {
+						if (isCreator()) {
 							$text = NAV_NEW_PRODUCT;
 							$url = $newProductUrl;
-						} else if ($user instanceof Admin) {
-							$text = NAV_SUPPORT;
-							$url = $supportUrl;
+						} else if(isAdmin()) {
+							$text = ADMIN_BUTTON;
+							$url = $adminSupportUrl;
+						} else if (isUnverifiedCreator()) {
+							$text = NAV_VERIFICATION_PENDING;
+							$url = "#";
 						} else {
 							$text = BECOME_CREATOR;
 							$url = $askCreatorUrl;

@@ -28,17 +28,25 @@ class CreatorController extends Controller {
 		if (!isLoggedIn()) {
 			redirect($this->getRoutes()['GET:User#login']);
 		}
-
-		if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['description'])) {
-			
-			$userModel = $this->model('User');
-
-			$data['error'] = $userModel->getError();
+		if (isCreator() || isUnverifiedCreator()) {
+			redirect($this->getRoutes()['GET:Home#index']);
 		}
 
-		$data['header'] = true;
-		$data['footer'] = true;
+		if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['description'])) {
+
+			$creatorModel = $this->model('Creator');
+			
+			$res = $creatorModel->ask();
+
+			if ($res !== false) {
+				redirect($this->getRoutes()['GET:User#logout']);
+			}
+
+			$data['error'] = $model->getError();
+		}
 		
+		$data['title'] = "Creator - Ask";
+
 		$data['stylesheets'][] = 'pages/ask';
 
 		$data['scripts'][] = [
@@ -47,6 +55,30 @@ class CreatorController extends Controller {
 		];
 		
 		$this->view('creator/ask', $data);
+	}
+
+	public function discover(): void {
+
+		$data['title'] = "Creators - Discover";
+		
+		$data['stylesheets'][] = 'pages/discover';
+
+		$data['scripts'][] = [
+			'name' => 'fixElementUp',
+			'attr' => 'defer'
+		];
+
+		$creatorModel = $this->model('Creator');
+
+		$res = $creatorModel->discover();
+
+		if ($res !== false) {
+			$data = array_merge($data, $res);
+		} else {
+			$data['error'] = $creatorModel->getError();
+		}
+
+		$this->view('creator/discover', $data);
 	}
 
 }

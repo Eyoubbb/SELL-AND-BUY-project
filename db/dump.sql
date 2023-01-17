@@ -256,47 +256,48 @@ DROP TABLE IF EXISTS `creators`;
 CREATE TABLE `creators` (
   `CREATOR_ID` int(11) NOT NULL,
   `CREATOR_DESCRIPTION` varchar(254) NOT NULL,
-  `CREATOR_BANNER_URL` varchar(254) DEFAULT NULL
+  `CREATOR_BANNER_URL` varchar(254) DEFAULT NULL,
+  `CREATOR_VISIBLE` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `creators`
 --
 
-INSERT INTO `creators` (`CREATOR_ID`, `CREATOR_DESCRIPTION`, `CREATOR_BANNER_URL`) VALUES
-(2, 'Welcome to the page of Miles Cummerata', 'BAN-1.svg'),
-(3, 'Welcome to the page of Sheldon Quigley', 'BAN-1.svg'),
-(4, 'Welcome to the page of Mavis Schultz', 'BAN-1.svg'),
-(5, 'Welcome to the page of Terry Medhurst', 'BAN-1.svg'),
-(6, 'Welcome to the page of Griffin Braun', 'BAN-1.svg'),
-(7, 'Welcome to the page of Doyle Ernser', 'BAN-1.svg'),
-(8, 'Welcome to the page of Kody Terry', 'BAN-1.svg'),
-(9, 'Welcome to the page of Kaya Emard', 'BAN-1.svg'),
-(10, 'Welcome to the page of Jeanne O\'Keefe', 'BAN-1.svg'),
-(11, 'Welcome to the page of Anais Yundt', 'BAN-1.svg'),
-(12, 'Welcome to the page of Lee Schmidt', 'BAN-1.svg'),
-(13, 'Welcome to the page of Lempi Runte', 'BAN-1.svg'),
-(14, 'Welcome to the page of Clotilde Larson', 'BAN-1.svg'),
-(15, 'Welcome to the page of Harrison Lemke', 'BAN-1.svg'),
-(16, 'Welcome to the page of Rita Shields', 'BAN-1.svg'),
-(17, 'Welcome to the page of Rory Conn', 'BAN-1.svg'),
-(18, 'Welcome to the page of Darien Witting', 'BAN-1.svg'),
-(19, 'Welcome to the page of Emely Schmitt', 'BAN-1.svg'),
-(20, 'Welcome to the page of Edwina Ernser', 'BAN-1.svg'),
-(21, 'Welcome to the page of Cristobal Watsica', 'BAN-1.svg'),
-(22, 'Welcome to the page of Garret Klocko', 'BAN-1.svg'),
-(23, 'Welcome to the page of Jeanne Halvorson', 'BAN-1.svg'),
-(24, 'Welcome to the page of Ewell Mueller', 'BAN-1.svg'),
-(25, 'Welcome to the page of Assunta Rath', 'BAN-1.svg'),
-(26, 'Welcome to the page of Salvatore Fisher', 'BAN-1.svg'),
-(27, 'Welcome to the page of Arne Jacobs', 'BAN-1.svg'),
-(28, 'Welcome to the page of Macy Greenfelder', 'BAN-1.svg'),
-(30, 'Welcome to the page of Gayle Krajcik', 'BAN-1.svg'),
-(31, 'Welcome to the page of Terrell Schuppe', 'BAN-1.svg'),
-(32, 'Welcome to the page of Davonte Heaney', 'BAN-1.svg'),
-(33, 'Welcome to the page of Allene Harber', 'BAN-1.svg'),
-(34, 'Welcome to the page of Terrence Koelpin', 'BAN-1.svg'),
-(35, 'Welcome to the page of Maurine Stracke', 'BAN-1.svg');
+INSERT INTO `creators` (`CREATOR_ID`, `CREATOR_DESCRIPTION`, `CREATOR_BANNER_URL`, `CREATOR_VISIBLE`) VALUES
+(2, 'Welcome to the page of Miles Cummerata', 'BAN-1.svg', 1),
+(3, 'Welcome to the page of Sheldon Quigley', 'BAN-1.svg', 1),
+(4, 'Welcome to the page of Mavis Schultz', 'BAN-1.svg', 1),
+(5, 'Welcome to the page of Terry Medhurst', 'BAN-1.svg', 1),
+(6, 'Welcome to the page of Griffin Braun', 'BAN-1.svg', 1),
+(7, 'Welcome to the page of Doyle Ernser', 'BAN-1.svg', 1),
+(8, 'Welcome to the page of Kody Terry', 'BAN-1.svg', 1),
+(9, 'Welcome to the page of Kaya Emard', 'BAN-1.svg', 1),
+(10, 'Welcome to the page of Jeanne O\'Keefe', 'BAN-1.svg', 1),
+(11, 'Welcome to the page of Anais Yundt', 'BAN-1.svg', 1),
+(12, 'Welcome to the page of Lee Schmidt', 'BAN-1.svg', 1),
+(13, 'Welcome to the page of Lempi Runte', 'BAN-1.svg', 1),
+(14, 'Welcome to the page of Clotilde Larson', 'BAN-1.svg', 1),
+(15, 'Welcome to the page of Harrison Lemke', 'BAN-1.svg', 1),
+(16, 'Welcome to the page of Rita Shields', 'BAN-1.svg', 1),
+(17, 'Welcome to the page of Rory Conn', 'BAN-1.svg', 1),
+(18, 'Welcome to the page of Darien Witting', 'BAN-1.svg', 1),
+(19, 'Welcome to the page of Emely Schmitt', 'BAN-1.svg', 1),
+(20, 'Welcome to the page of Edwina Ernser', 'BAN-1.svg', 1),
+(21, 'Welcome to the page of Cristobal Watsica', 'BAN-1.svg', 1),
+(22, 'Welcome to the page of Garret Klocko', 'BAN-1.svg', 1),
+(23, 'Welcome to the page of Jeanne Halvorson', 'BAN-1.svg', 1),
+(24, 'Welcome to the page of Ewell Mueller', 'BAN-1.svg', 1),
+(25, 'Welcome to the page of Assunta Rath', 'BAN-1.svg', 1),
+(26, 'Welcome to the page of Salvatore Fisher', 'BAN-1.svg', 1),
+(27, 'Welcome to the page of Arne Jacobs', 'BAN-1.svg', 1),
+(28, 'Welcome to the page of Macy Greenfelder', 'BAN-1.svg', 1),
+(30, 'Welcome to the page of Gayle Krajcik', 'BAN-1.svg', 1),
+(31, 'Welcome to the page of Terrell Schuppe', 'BAN-1.svg', 1),
+(32, 'Welcome to the page of Davonte Heaney', 'BAN-1.svg', 1),
+(33, 'Welcome to the page of Allene Harber', 'BAN-1.svg', 1),
+(34, 'Welcome to the page of Terrence Koelpin', 'BAN-1.svg', 1),
+(35, 'Welcome to the page of Maurine Stracke', 'BAN-1.svg', 1);
 
 -- --------------------------------------------------------
 
@@ -710,7 +711,7 @@ INSERT INTO `socialmedias` (`SOCIAL_MEDIA_ID`, `SOCIAL_MEDIA_NAME`, `SOCIAL_MEDI
 (2, 'Instagram', 'https://instagram.com/', 'SM-2.svg'),
 (3, 'YouTube', 'https://youtube.com/@', 'SM-3.svg'),
 (4, 'Pinterest', 'https://pinterest.com/', 'SM-4.svg'),
-(5, 'Website', 'https://', 'SM-5.svg'),
+(5, 'Website', '', 'SM-5.svg'),
 (6, 'Twitter', 'https://twitter.com/', 'SM-6.svg');
 
 -- --------------------------------------------------------

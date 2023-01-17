@@ -1,0 +1,60 @@
+@use "../../abstracts" as *;
+@use "../../base" as *;
+
+@use "../../components/header";
+@use "../../components/footer";
+@use "../../components/nav-header";
+
+.settings {
+	$gap: 1em;
+	display: flex;
+	flex-direction: column;
+
+	padding: calc(2 * $gap);
+
+	.types {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+
+		gap : calc(2 * $gap);
+
+		.settings-type {
+			display: flex;
+			align-items: center;
+	
+			column-gap: $gap;
+			
+			@include size(25em, auto);
+			padding: $gap;
+			background-color: var(--primary-1);
+			border-radius: 4px;
+	
+			img {
+				@include size(2em);
+			}
+	
+			&:hover {
+				background-color: var(--primary-2);
+			}
+
+			p { 
+
+				&.type-title {
+					white-space: nowrap;
+
+				}
+
+				&.guide {
+					margin-top: 0.5em;
+					font-size: 14px;
+					color: var(--primary-3);
+				}
+			}
+		}
+
+		@include media(l) {
+			justify-content: center;
+		}
+	}
+}

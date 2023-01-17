@@ -4,6 +4,7 @@ require_once PATH_CORE . 'Model.php';
 require_once PATH_ENTITIES . 'Ticket.php';
 require_once PATH_ENTITIES . 'TicketType.php';
 require_once PATH_ENTITIES . 'User.php';
+require_once PATH_ENTITIES . 'Creator.php';
 
 class TicketModel extends Model {
 	public function tickets(): array | false {
@@ -62,6 +63,20 @@ class TicketModel extends Model {
 			$this->setError('ERROR_RESOLVING_TICKET');
 			return false;
 		}
+
+		if ($ticket->getTicketTypeId() === 5) {
+
+			$creatorDAO = $this->dao('Creator');
+			$creator = new Creator($creatorDAO->findAllTypesCreatorById($ticket->getUserId()));
+
+			if ($creator->getVisible()) {
+				$this->setError('ERROR_UNEXPECTED_CREATOR_VISIBILITY');
+				return false;
+			}
+
+			$res = $creatorDAO->setVisibleCreator($creator->getId(), 1);
+		}
+
 		return true;
 	}
 
@@ -73,6 +88,20 @@ class TicketModel extends Model {
 			$this->setError('ERROR_REOPENING_TICKET');
 			return false;
 		}
+
+		if ($ticket->getTicketTypeId() === 5) {
+			
+			$creatorDAO = $this->dao('Creator');
+			$creator = new Creator($creatorDAO->findAllTypesCreatorById($ticket->getUserId()));
+
+			if ($creator->getVisible() === false) {
+				$this->setError('ERROR_UNEXPECTED_CREATOR_VISIBILITY');
+				return false;
+			}
+
+			$res = $creatorDAO->setVisibleCreator($creator->getId(), 0);
+		}
+
 		return true;
 	}
 
@@ -84,6 +113,30 @@ class TicketModel extends Model {
 			$this->setError('ERROR_DELETING_TICKET');
 			return false;
 		}
+
+		if ($ticket->getTicketTypeId() === 5) {
+			
+			$creatorDAO = $this->dao('Creator');
+			$creator = new Creator($creatorDAO->findAllTypesCreatorById($ticket->getUserId()));
+
+			if ($creator->getVisible() == 0) {
+
+				$fileName = $creator->getPictureUrl();
+
+				if (file_exists(PATH_UPLOAD_CREATOR_BANNERS . $fileName)) {
+					unlink(PATH_UPLOAD_CREATOR_BANNERS . $fileName);
+				}
+
+				$socialMediaAccountsDAO = $this->dao('SocialMediaAccounts');
+				$res = $socialMediaAccountsDAO->removeAllAccounts($creator->getId());
+
+				$resDelete = $creatorDAO->deleteCreator($creator->getId());
+
+
+			}
+			
+		}
+
 		return true;
 	}
 }

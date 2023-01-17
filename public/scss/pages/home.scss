@@ -10,20 +10,32 @@
 main {
 	--gap : 1em;
 
-	section {
-		padding-bottom: 3em;
-	}
 
 	.banner {
+		position: fixed;
+		z-index: -1;
+		top: 0;
+		left: 0;
+
 		img {
-			@include size;
+			width: 100vw;
 		}
 	}
 
+	.filter {
+		position: sticky;
+		top: 0;
+		border-bottom: 5px solid var(--primary-2);
+		margin-top: calc( 31vw - 92px);
+	}
+
 	.products {
+		border-bottom: 5px solid var(--primary-2);
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
 		gap: 3em;
+		background-color: var(--primary-1);
+		padding: 6em 0 6em 0;
 	}
 }

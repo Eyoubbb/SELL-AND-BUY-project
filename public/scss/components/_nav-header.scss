@@ -1,0 +1,18 @@
+@use "../abstracts" as *;
+
+$gap: 1em;
+
+div.title {
+	display: flex;
+	align-items: center;
+	padding: $gap 0em;
+	background-color: var(--primary-2);
+
+	a {
+		padding: 0em 1em;
+		font-weight: bold;
+		&.support-title {
+			border-right: 3px solid var(--primary-1);
+		}
+	}
+}

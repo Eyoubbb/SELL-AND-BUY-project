@@ -40,7 +40,6 @@ class CartDAO extends DAO {
     }
 
     public function addProductToCart(int $user_id, int $product_id, int $cart_quantity): bool {
-        print("<br>AddproductToCart<br>");
         return $this->insert([
             'user_id' => $user_id,
             'product_id' => $product_id,

@@ -1,5 +1,5 @@
 <section>
-<div class="nav-container">
+<div class="nav-container fixElementUp">
     <div class="nav">
         <div class="step" title="click me">
             <p title="click me"><?= DELIVERY_TITTLE ?></p>

@@ -32,6 +32,8 @@ $router->post('/product/new', 'Product#new');
 
 $router->get('/creator/:id', 'Creator#index')->with('id', '[0-9]+');
 $router->get('/creator/ask', 'Creator#ask');
+$router->post('/creator/ask', 'Creator#ask');
+$router->get('/creator/discover', 'Creator#discover');
 
 $router->get('/admin/support', 'Admin#support');
 
@@ -44,5 +46,9 @@ $router->get('/info/shippingReturn', 'Info#shippingReturn');
 $router->get('/info/contact', 'Info#contact');
 $router->get('/info/legalNotice', 'Info#legalNotice');
 $router->get('/info/termsCondition', 'Info#termsCondition');
+
+$router->get('/settings', 'Settings#index');
+$router->get('/settings/security', 'Settings#security');
+$router->post('/settings/security', 'Settings#security');
 
 $router->run();

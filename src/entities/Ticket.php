@@ -41,5 +41,17 @@ class Ticket {
 	public function getResolved(): bool { return $this->ticket_resolved; }
 
 	public function setResolved(bool $resolved): void { $this->ticket_resolved = $resolved; }
+
+	public function setUserId(int $user_id): void { $this->ticket_user_id = $user_id; }
+
+	public function setTicketTypeId(int $ticket_type_id): void { $this->ticket_ticket_type_id = $ticket_type_id; }
+
+	public function setAdminId(int $admin_id): void { $this->ticket_admin_id = $admin_id; }
+
+	public function setDate(string $date): void { $this->ticket_date = $date; }
+
+	public function setName(string $name): void { $this->ticket_name = $name; }
+
+	public function setDescription(string $description): void { $this->ticket_description = $description; }
 	
 }

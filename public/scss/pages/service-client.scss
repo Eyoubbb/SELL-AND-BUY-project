@@ -3,6 +3,7 @@
 
 @use "../components/header";
 @use "../components/footer";
+@use "../components/nav-header";
 
 main {    
     display: flex;
@@ -15,21 +16,6 @@ section.container {
     flex-direction: column;
 
     $gap : 1em;
-
-    div.title {
-        display: flex;
-        align-items: center;
-        padding: $gap;
-        background-color: var(--primary-2);
-
-        a {
-            padding: 0em 1em;
-            font-weight: bold;
-            &.support-title {
-                border-right: 3px solid var(--primary-1);
-            }
-        }
-    }
 
     .body-support {
         display: flex;
