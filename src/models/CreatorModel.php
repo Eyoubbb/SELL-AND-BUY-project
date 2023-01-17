@@ -42,6 +42,7 @@ class CreatorModel extends Model {
 	
 	public function ask(): bool {
 		$description = $_POST['description'];
+		$motive = $_POST['motive'];
 		$user = unserialize($_SESSION['user']);
 		var_dump($_FILES);
 		if ($_FILES['banner']['size'] == 0) {
@@ -180,7 +181,7 @@ class CreatorModel extends Model {
 		$ticket = new Ticket();
 		$ticket->setUserId($user->getId());
 		$ticket->setName("Creator registration");
-		$ticket->setDescription("Creator registration");
+		$ticket->setDescription($motive);
 		$ticket->setTicketTypeId(5);
 		$ticket->setAdminId($res[$randomAdmin]['admin_id']);
 		$ticket->setDate(date('Y-m-d', $dt));
