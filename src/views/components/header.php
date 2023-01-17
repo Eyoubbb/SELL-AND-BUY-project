@@ -103,12 +103,10 @@
 				<?php
 					if ($user) {
 						$settingsText = NAV_ACCOUNT_SETTINGS;
-						$askCreatorText = BECOME_CREATOR;
-						$cartText = NAV_CART;
-
+						$url = isLoggedIn() && isCreator() ? $data['routes']['GET:Creator#index']->getUrl(['id' => $user->getId()]) : $logoutUrl;
 						echo <<<HTML
 							<li class="profile">
-								<a href="$logoutUrl">
+								<a href="$url">
 									<span class="name">{$user->getFirstName()} {$user->getLastName()}</span>
 									<span class="email">{$user->getEmail()}</span>
 								</a>
@@ -134,6 +132,9 @@
 							$text = BECOME_CREATOR;
 							$url = $askCreatorUrl;
 						}
+
+						$askCreatorText = BECOME_CREATOR;
+						$cartText = NAV_CART;
 
 						echo <<<HTML
 							<li>
