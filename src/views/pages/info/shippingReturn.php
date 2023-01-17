@@ -11,7 +11,7 @@
 </div>
     <div class="left-space"></div>
     <div class="content">
-        <h1><?= DELIVERY_SHIPPING_TITTLE ?></h1>
+        <h1><?= DELIVERY_SHIPPING_TITLE ?></h1>
 
         <h3><?= DELIVERY_TITTLE ?></h3>
         <p><?= DELIVERY_TEXT_P1 ?></p>
